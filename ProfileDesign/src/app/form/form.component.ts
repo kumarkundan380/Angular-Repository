@@ -18,6 +18,9 @@ export class FormComponent implements OnInit {
   get email(){
     return this.profileForm.get('email');
   }
+  get mobile(){
+    return this.profileForm.get('mobile');
+  }
   
   constructor(private fb:FormBuilder,private formService:FormService){
     
@@ -29,11 +32,13 @@ export class FormComponent implements OnInit {
     email:['',[Validators.required,Validators.email]],
     designation:['',Validators.required],
     country:['',Validators.required],
-    mobile:['',Validators.required],
+    mobile:['',[Validators.required,Validators.minLength(10)]],
     dob:['',Validators.required],
     skill:['',Validators.required],
     hobby:['',Validators.required],
     gender:['',Validators.required],
+    address:['',Validators.required],
+    language:['',Validators.required],
     sscBoard:['',Validators.required],
     sscPercentage:['',Validators.required],
     sscYear:['',Validators.required],
@@ -74,7 +79,7 @@ export class FormComponent implements OnInit {
         this.imgURL = reader.result; 
     }
    this.imageName="/assets/"+files[0].name;
-   console.log(this.imageName);
+   //console.log(this.imageName);
   }
   ngOnInit() {
    

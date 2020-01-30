@@ -18,9 +18,11 @@ export class FormService {
   }
   setImage(img:any){
     this.imageName=img;
+    console.log("set image");
 
   }
   getImage(){
+    console.log("in service image");
     return this.imageName;
   }
 }

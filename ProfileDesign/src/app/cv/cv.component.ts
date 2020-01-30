@@ -19,11 +19,8 @@ Skills:any=[];
   ngOnInit() {
     this.data=this.formService.getData();
     this.Skills=this.data.get('skill').value.split(",");
-    //console.log(this.Skills);
     this.imageName=this.formService.getImage();
-    console.log(this.imageName);
-
-
+    console.log("sdfssf");
   }
 
 

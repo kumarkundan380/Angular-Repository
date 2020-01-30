@@ -4,7 +4,7 @@
     <form class="form-control-lg-4" [formGroup]="profileForm" (change)="update()">
         <div class="row">
             <div class="col-lg-4 col-mg-4 col-sm-4 col-12">
-                <img [src]='imgURL' default="/assets/profile.png" id ="profilepic" class="img-fluid">
+                <img [src]='imgURL' id ="profilepic" class="img-fluid">
             </div>
             <div class="col-lg-4 col-mg-4 col-sm-4 col-12">
                 <div class="form-group">
@@ -60,11 +60,11 @@
             <div class="col-lg-4 col-md-4 col-sm-4 col-12">
                 <div class="form-group">
                     <label>Mobile Number</label>
-                    <input [class.is-invalid]="profileForm.get('mobile').invalid 
-                    && profileForm.get('mobile').touched" formControlName="mobile" type="text" class="form-control" >
-                    <small [class.d-none]="profileForm.get('mobile').valid || 
-                    profileForm.get('mobile').untouched"class="text-danger">Mobile Number is required</small> 
-                    
+                    <input [class.is-invalid]="mobile.invalid && mobile.touched" formControlName="mobile" type="text" class="form-control" >
+                    <div *ngIf="mobile.invalid && mobile.touched">
+                        <small *ngIf="mobile.errors?.required" class="text-danger"> Mobile Number is required</small>
+                        <small *ngIf="mobile.errors?.minlength" class="text-danger">Plz Provide Valid Mobile Number</small>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-12">
@@ -119,6 +119,22 @@
                 </div> 
             </div>
         </div>
+     <!----   <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="form-group">
+                    <label>Address</label>
+                    <input [class.is-invalid]="address.invalid && address.touched" formControlName="address" type="text" class="form-control" >
+                    <small [class.d-none]="profileForm.get('address').valid || profileForm.get('address').untouched" class="text-danger">Address is required</small>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="form-group">
+                    <label>Language</label>
+                    <input [class.is-invalid]="language.invalid && language.touched" formControlName="language" type="text" class="form-control" >
+                    <small [class.d-none]="profileForm.get('language').valid || profileForm.get('language').untouched"class="text-danger">This Field cannot be empty</small>
+                </div>
+            </div>
+        </div> -->
         <div class="row">
             <div class="col-12">
                 <h3 class="text text-dark">Educational Qualifications</h3>

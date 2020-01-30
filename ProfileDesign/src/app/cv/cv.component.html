@@ -4,13 +4,11 @@
             <img id="image" [src]="imageName" onchange="readURL(this);" class="rounded-circle" alt="Profile" width="150" height="150">
         </div>
         <div class="col-lg-4 col-mg-4 col-sm-4 col-12">
-            <h3> {{data.get('firstName').value}} {{data.get('firstName').value}} </h3>
+            <h3> {{data.get('firstName').value}} {{data.get('lastName').value}} </h3>
             <hr id="horizontal">
             <h4>{{data.get('designation').value}}</h4>
         </div>
         <div class="col-lg-4 col-mg-4 col-sm-4 col-12" id="left">
-            <p style="margin-left: 15px;"></p>
-            <p style="margin-left: 15px;"></p>
             <p style="margin-left: 15px;">{{data.get('email').value}}</p>
             <p style="margin-left: 15px;">{{data.get('mobile').value}}</p>
         </div>
