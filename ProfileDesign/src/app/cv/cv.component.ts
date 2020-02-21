@@ -10,7 +10,8 @@ import { FormGroup } from '@angular/forms';
 export class CvComponent implements OnInit {
 data:FormGroup;
 imageName:any;
-Skills:any=[];
+skills:any=[];
+languages:any[];
   constructor(private formService:FormService) { 
     //this.data=this.formService.getData();
     //console.log(this.data.value);
@@ -18,9 +19,9 @@ Skills:any=[];
 
   ngOnInit() {
     this.data=this.formService.getData();
-    this.Skills=this.data.get('skill').value.split(",");
+    this.skills=this.data.get('skill').value.split(",");
+    this.languages=this.data.get('language').value.split(",");
     this.imageName=this.formService.getImage();
-    console.log("sdfssf");
   }
 
 

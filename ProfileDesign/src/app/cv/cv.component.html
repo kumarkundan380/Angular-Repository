@@ -20,24 +20,14 @@
     </div><br>
     <div class="row">
         <div class="col-lg-6 col-mg-6 col-sm-6 col-12">
-            <h4>Intern Software Engineer</h4>
-            <h6>Present</h6>   
+            <h4>{{data.get('companyDesignation').value}}</h4>
+            <h6>{{data.get('period').value}}</h6>   
         </div>
         <div class="col-lg-6 col-mg-6 col-sm-6 col-12">
-            <h4>Mindfire Solutions</h4>
-             
-        </div>
-        
-    </div>
-    <div class="row">
-        <div class="col-lg-6 col-mg-6 col-sm-6 col-12">
-            <h4>Development of android app for air quality.</h4>
-            <h6>DEC 2018-JAN 2019</h6>   
-        </div>
-        <div class="col-lg-6 col-mg-6 col-sm-6 col-12">
-            <h4>City Probe(NIT Durgapur)</h4>
+            <h4>{{data.get('companyName').value}}</h4>
         </div>
     </div>
+    
     <div class="row">
         <div class="col-12">
             <h3 style="background: powderblue;">EDUCATION</h3>
@@ -88,19 +78,18 @@
             <h3 style="background: powderblue;">SKILLS</h3>
         </div>
         <div class="col-lg-6 col-mg-6 col-sm-6 col-12">
-            <h3 style="background: powderblue;">LANGUAES</h3>
+            <h3 style="background: powderblue;">LANGUAGES</h3>
         </div>
     </div><br>
     <div class="row">
         <div class="col-lg-6 col-mg-6 col-sm-6 col-12">
-            <ul *ngFor="let skill of Skills">
+            <ul *ngFor="let skill of skills">
                 <li>{{skill}}</li>
               </ul> 
         </div>
         <div class="col-lg-6 col-mg-6 col-sm-6 col-12">
-            <ul>
-                <li id="l1">English</li>
-                <li id="l2">Hindi</li>
+            <ul *ngFor="let language of languages">
+                <li> {{language}} </li> 
             </ul>    
         </div>
     </div><br>
